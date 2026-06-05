@@ -11,7 +11,8 @@ import rehypeSlug from "rehype-slug";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://basic-blog-5u9.pages.dev/",
+  site: 'https://aspratou.github.io',
+  base: '/my-database',
 
   fonts: [
     {
