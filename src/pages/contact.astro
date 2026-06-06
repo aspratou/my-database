@@ -1,12 +1,31 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; // お使いのテンプレートのレイアウトに合わせてください
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="お問い合わせ">
-  <main class="container">
-    <h1>お問い合わせ</h1>
-    <p>当ブログに関するお問い合わせは、以下のフォームよりお願いいたします。</p>
+  <div style="max-width: 768px; margin: 0 auto !important; padding: 60px 24px !important; box-sizing: border-box; text-align: center;">
     
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScC2W75bvzyQEtZf1Ht8kJv0oZfP_AgkNaHiT9h5SKJG_Xpvw/viewform?embedded=true" width="640" height="826" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-  </main>
+    <h1 style="font-size: 1.875rem; font-weight: 700; line-height: 1.25; margin-bottom: 2rem; color: inherit; text-align: left;">
+      お問い合わせ
+    </h1>
+    
+    <div style="font-size: 1rem; line-height: 1.75; color: inherit; text-align: left; margin-bottom: 2.5rem;">
+      <p style="margin: 0;">当ブログに関するお問い合わせやご意見・ご感想は、以下の外部フォーム（Googleフォーム）よりお願いいたします。</p>
+      <p style="margin: 0.5rem 0 0 0;">内容を確認の上、必要に応じて折り返しご連絡させていただきます。</p>
+    </div>
+
+    <div style="margin: 3rem 0;">
+      <a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLScC2W75bvzyQEtZf1Ht8kJv0oZfP_AgkNaHiT9h5SKJG_Xpvw/viewform?usp=sf_link" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style="display: inline-block; background-color: #171717; color: #ffffff; font-weight: 600; padding: 0.875rem 2rem; border-radius: 0.375rem; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); transition: opacity 0.2s;"
+        onmouseover="this.style.opacity='0.8'"
+        onmouseout="this.style.opacity='1'"
+      >
+        お問い合わせフォームを開く（外部サイト）
+      </a>
+    </div>
+
+  </div>
 </BaseLayout>
