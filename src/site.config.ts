@@ -1,7 +1,7 @@
 export const SITE_SETTINGS = {
-  title: "Aspratou", // ブログのタイトル
+  title: "Rato", // ブログのタイトル
   description: "社会システムの解説や言語のニュアンス、ゲームメカニクスまで、日々のアウトプットや探求をまとめる個人データベース。", // 検索結果に表示される説明文（SEOで超重要）
-  owner: "aspratou", // サイトの所有者名
+  owner: "Rato", // サイトの所有者名
   ogImages:
     "https://res.cloudinary.com/dellp9a4z/image/upload/v1756758385/og-home_ejuqq8.png", // ※後日、自分の画像URLに変更できます
   socials: [
