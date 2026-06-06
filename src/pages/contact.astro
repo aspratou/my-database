@@ -3,30 +3,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="お問い合わせ">
-  <div style="max-width: 768px; margin: 0 auto !important; padding: 60px 24px !important; box-sizing: border-box;">
+  <div class="mx-auto max-w-3xl px-4 py-12 md:py-20">
     
-    <h1 style="font-size: 1.875rem; font-weight: 700; line-height: 1.25; margin-bottom: 2rem; color: inherit;">
+    <h1 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-8">
       お問い合わせ
     </h1>
     
-    <div style="font-size: 1rem; line-height: 1.75; color: inherit; space-y-4;">
-      <p style="margin: 0 0 1rem 0;">当ブログに関するお問い合わせやご意見・ご感想は、以下のフォームよりお願いいたします。</p>
+    <div class="space-y-6 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+      <p>当ブログに関するお問い合わせやご意見・ご感想は、以下のフォームよりお願いいたします。</p>
       
-      <p style="margin: 0;">
+      <p class="text-lg">
         👉 
         <a 
           href="https://docs.google.com/forms/d/e/1FAIpQLScC2W75bvzyQEtZf1Ht8kJv0oZfP_AgkNaHiT9h5SKJG_Xpvw/viewform?usp=sf_link" 
           target="_blank" 
           rel="noopener noreferrer" 
-          style="color: #2563eb !important; text-decoration: underline !important; font-weight: 500; transition: color 0.2s;"
-          onmouseover="this.style.color='#1d4ed8'"
-          onmouseout="this.style.color='#2563eb'"
+          class="text-blue-600 dark:text-blue-400 underline font-medium hover:text-blue-800 dark:hover:text-blue-300"
+          style="color: #2563eb !important; text-decoration: underline !important;" 
         >
           Googleフォーム（お問い合わせ窓口）を開く
         </a>
       </p>
       
-      <p style="margin: 1.5rem 0 0 0; font-size: 0.875rem; opacity: 0.8;">
+      <p class="pt-4 text-sm text-gray-500">
         ※クリックすると、安全な外部の入力画面が新しいタブで開きます。内容を確認の上、必要に応じて折り返しご連絡させていただきます。
       </p>
     </div>
