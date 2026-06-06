@@ -1,5 +1,5 @@
 export const SITE_SETTINGS = {
-  title: "my-database", // ブログのタイトル
+  title: "Aspratou", // ブログのタイトル
   description: "社会システムの解説や言語のニュアンス、ゲームメカニクスまで、日々のアウトプットや探求をまとめる個人データベース。", // 検索結果に表示される説明文（SEOで超重要）
   owner: "aspratou", // サイトの所有者名
   ogImages:
