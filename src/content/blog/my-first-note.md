@@ -3,7 +3,7 @@ title: "日本と欧米の『溶ける』のイメージ構造化"
 description: "Dissolve と Melt のニュアンスの違いを視覚的に整理してみる"
 pubDate: "2026-06-05"
 image:
-  src: "/images/AdobeStock_2512654.webp"
+  src: https://aspratou.github.io/images/AdobeStock_2512654.webp
   alt: "融解と溶解のイメージ"
 license: "CC BY-SA 4.0"
 categories: ["English"]

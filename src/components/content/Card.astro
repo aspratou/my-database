@@ -1,5 +1,4 @@
 ---
-import OptimizedImage from "../ui/OptimizedImage.astro";
 import type { ContentEntry, ImageLoading, WithMeta } from "../../types";
 import FeaturedTag from "./FeaturedTag.astro";
 import FormattedDate from "./FormattedDate.astro";
@@ -31,16 +30,15 @@ const displayDate = updatedDate ?? pubDate;
 <article class="group relative flex flex-col">
     {featured && <FeaturedTag class="absolute top-1 left-1 z-10" />}
 
-    <OptimizedImage
-        src={image.src}
-        alt={image.alt}
-        width={1600}
-        height={900}
-        sizes="(max-width: 768px) 100vw, 33vw"
-        loading={loading}
-        wrapperClass="mb-4 aspect-video rounded-lg"
-        imageClass="transition duration-250 ease-out group-hover:scale-105 group-active:scale-105"
-    />
+    {/* 👇 エラーの原因だったOptimizedImageを、確実な標準のimgタグに置き換えました */}
+    <div class="mb-4 aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+        <img
+            src={image.src}
+            alt={image.alt}
+            loading={loading}
+            class="w-full h-full object-cover transition duration-250 ease-out group-hover:scale-105 group-active:scale-105"
+        />
+    </div>
 
     <h3
         class="mb-2 line-clamp-2 text-xl font-semibold transition-colors duration-250 ease-out group-hover:text-blue-500 group-active:text-blue-500 dark:group-hover:text-yellow-400 dark:group-active:text-yellow-400"
