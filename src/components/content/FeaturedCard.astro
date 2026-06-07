@@ -1,6 +1,4 @@
 ---
-import OptimizedImage from "../ui/OptimizedImage.astro";
-import type { CldImageProps } from "astro-cloudinary";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ContentEntry, ImageLoading } from "../../types";
 
@@ -54,10 +52,10 @@ const textBox = cva(
 interface Props extends VariantProps<typeof card> {
     entry: ContentEntry;
     loading?: ImageLoading;
-    fetchpriority?: CldImageProps["fetchpriority"];
+    fetchpriority?: string;
 }
 
-const { entry, size, loading = "lazy", fetchpriority } = Astro.props;
+const { entry, size, loading = "lazy" } = Astro.props;
 
 const { collection, id, data } = entry;
 const { title, description, image } = data;
@@ -67,16 +65,15 @@ const { title, description, image } = data;
     href={`/${collection}/${id}`}
     class={`${card({ size })} card-hover-effect card-size-${size}`}
 >
-    <OptimizedImage
-        src={image.src}
-        alt={image.alt}
-        width={1600}
-        height={900}
-        loading={loading}
-        fetchpriority={fetchpriority}
-        wrapperClass="h-full w-full z-10 rounded-[0.625rem]"
-        imageClass="block transform-gpu will-change-transform backface-hidden transition-transform duration-500 ease-out group-hover:scale-105"
-    />
+    {/* 👇 エラー原因だったOptimizedImageを、デザインを保ったまま標準imgタグに修正 */}
+    <div class="absolute inset-0 w-full h-full z-10 rounded-[0.625rem] overflow-hidden bg-gray-900">
+        <img
+            src={image.src}
+            alt={image.alt}
+            loading={loading}
+            class="w-full h-full object-cover block transform-gpu will-change-transform backface-hidden transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+    </div>
 
     <span
         class="absolute top-0 left-0 z-50 m-2 inline-block rounded-md bg-black/70 px-3 py-1.5 text-xs font-medium text-white capitalize sm:text-sm md:m-2.5"
