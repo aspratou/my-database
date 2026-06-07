@@ -1,57 +1,35 @@
 ---
-draft: false
-title: Terms of Service
-description: Read the terms and conditions for using Daniel Adrian's website and services.
-lastUpdated: 2025-08-01T03:20:00.000Z
-ogImage:
-  src: >-
-    https://res.cloudinary.com/dellp9a4z/image/upload/v1756758388/og-terms-of-service_l6gfoa.png
-  alt: >-
-    The graphic has a two-column layout on a light blue, gridded background. On
-    the left, it displays a profile picture of a man with the text "Daniel
-    Adrian's SPACE" below. The right side features the large heading "Terms of
-    Service" and a brief description inviting users to read the terms and
-    conditions for using the website and its services.
+title: "利用規約"
+description: "当ブログの利用規約に関するページです。"
+pubDate: "2026-06-07"
+lastUpdated: "2026-06-07"
 ---
-Welcome to this website. By accessing or using the site, you agree to comply with and be
-bound by the following terms and conditions.
 
-## Use of the Site
+## 第1条（適用）
+本利用規約（以下、「本規約」といいます。）は、当ブログ（以下、「当サイト」といいます。）で提供するコンテンツやサービスの利用条件を定めるものです。当サイトを利用される皆様（以下、「ユーザー」といいます。）には、本規約に従って当サイトをご利用いただきます。
 
-This site and its contents are provided for informational purposes only. You may not copy,
-reproduce, distribute, or otherwise exploit any content without prior written permission.
+## 第2条（著作権・知的財産権）
+当サイトに掲載されているすべての文章、画像、デザイン、プログラム等の著作権および知的財産権は、当サイト運営者（Rato）または正当な権利者に帰属します。
+ユーザーは、著作権法で認められた「引用」等の範囲を超えて、無断でこれらを転載、複製、配布、改変することはできません。
 
-## User Responsibilities
+## 第3条（禁止事項）
+ユーザーは、当サイトの利用にあたり、以下の行為をしてはなりません。
+1. 法令または公序良俗に反する行為
+2. 当サイトのサーバーやネットワークの機能を破壊したり、妨害したりする行為
+3. 当サイトの運営を妨害するおそれのある行為
+4. 他のユーザーまたは第三者に対する誹謗中傷、迷惑行為
+5. その他、当サイト運営者が不適切と判断する行為
 
-You agree not to misuse the site or engage in any activity that could harm the site, its
-users, or third parties.
+## 第4条（免責事項）
+1. 当サイトに掲載されている情報の正確性、最新性、完全性については細心の注意を払っておりますが、その内容を保証するものではありません。当サイトの情報を利用したことにより生じたトラブルや損失・損害等について、当サイト運営者は一切の責任を負いません。
+2. 当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。
+3. 当サイトに掲載している情報は、予告なしに変更または削除されることがあります。
 
-## Intellectual Property
+## 第5条（利用規約の変更）
+当サイト運営者は、必要と判断した場合には、ユーザーに通知することなくいつでも本規約を変更することができるものとします。変更後の本規約は、当サイトに掲載された時点から効力を生じるものとします。
 
-All content on this site is owned by us or our licensors and is protected by applicable
-intellectual property laws.
+## 第6条（準拠法・裁判管轄）
+本規約の解釈にあたっては、日本法を準拠法とします。万が一、当サイトの利用に関して紛争が生じた場合は、当サイト運営者の居住地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。
 
-## Third-Party Services and Links
-
-This site is hosted by Cloudflare. Content delivery, security, and performance features are provided according to Cloudflare’s policies.
-
-The site may also contain links to third-party websites, including external shops where purchases are made. We are not responsible for the content, transactions, fulfillment, or policies of any third-party sites.
-
-## Disclaimer of Warranties
-
-The site is provided on an "as is" and "as available" basis without warranties of any kind,
-either express or implied.
-
-## Limitation of Liability
-
-In no event shall we be liable for any damages arising from your use of the site or reliance
-on any information provided.
-
-## Changes to These Terms
-
-We may update these Terms from time to time. Continued use of the site constitutes
-acceptance of the revised terms.
-
-## Contact
-
-If you have any questions about these Terms, please [contact me](/contact)
+---
+2026年6月7日 策定

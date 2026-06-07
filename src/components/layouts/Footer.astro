@@ -18,28 +18,6 @@ const currentYear = new Date().getFullYear();
             <div
                 class="flex flex-wrap gap-x-12 gap-y-10 sm:flex-row sm:items-start sm:justify-between lg:flex-nowrap"
             >
-                <div
-                    class="order-1 basis-full lg:order-3 lg:flex-none lg:shrink-0 lg:basis-82"
-                >
-                    <div>
-                        <h3
-                            class="text-sm font-semibold tracking-wider uppercase"
-                        >
-                            Stay Updated
-                        </h3>
-                        <p
-                            class="mt-4 text-sm text-gray-700 dark:text-gray-300"
-                        >
-                            Subscribe to my newsletter for latest updates.
-                        </p>
-                        <div class="mt-4">
-                            <NewsletterForm />
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <BuyMeACoffee class="text-md" />
-                    </div>
-                </div>
 
                 <div class="order-2 max-w-2xs space-y-4 lg:order-1">
                     <h2 class="text-lg font-semibold">
@@ -84,22 +62,6 @@ const currentYear = new Date().getFullYear();
                 <p class="text-sm">
                     &copy; {currentYear} {site.title}. All rights reserved.
                 </p>
-                <div class="flex space-x-10">
-                    <Link
-                        variant="plain"
-                        href="/privacy/"
-                        class="text-sm"
-                    >
-                        プライバシーポリシー
-                    </Link>
-                    <Link
-                        variant="plain"
-                        href="/contact/"
-                        class="text-sm"
-                    >
-                        お問い合わせ
-                    </Link>
-                </div>
             </div>
         </div>
     </div>

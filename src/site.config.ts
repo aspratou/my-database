@@ -1,6 +1,6 @@
 export const SITE_SETTINGS = {
   title: "Rato", // ブログのタイトル
-  description: "社会システムの解説や言語のニュアンス、ゲームメカニクスまで、日々のアウトプットや探求をまとめる個人データベース。", // 検索結果に表示される説明文（SEOで超重要）
+  description: "日々のアウトプットや探求をまとめる個人データベース", // 検索結果に表示される説明文（SEOで超重要）
   owner: "Rato", // サイトの所有者名
   ogImages:
     "https://res.cloudinary.com/dellp9a4z/image/upload/v1756758385/og-home_ejuqq8.png", // ※後日、自分の画像URLに変更できます
@@ -11,12 +11,18 @@ export const SITE_SETTINGS = {
       url: "https://github.com/aspratou", // あなたのGitHub URL
       handle: "aspratou",
     },
-    // 👇 YouTubeチャンネル（現代社会のバグ等の解説動画）へのリンクなど、必要に応じて追加・変更できます
+    // 👇 YouTubeチャンネルへのリンクなど、必要に応じて追加・変更できます
     {
       icon: "youtube",
       label: "YouTube",
       url: "https://youtube.com/", // チャンネルのURLを入れる
       handle: "YouTube Channel",
+    },
+    {
+      icon: "instagram",
+      label: "Instagram",
+      url: "https://instagram.com/", // チャンネルのURLを入れる
+      handle: "Instagram",
     },
   ],
 };
@@ -24,70 +30,89 @@ export const SITE_SETTINGS = {
 
 export const header = [
   {
-    name: "Blog",
+    name: "Game",
+    url: "/Game",
+  },
+  {
+    name: "Book",
+    url: "/projects",
+  },
+  {
+    name: "English",
+    url: "/english",
+  },
+  {
+    name: "Diary",
     url: "/blog",
-  },
-  {
-    name: "Categories", // 💡 Categories を新しく追加
-    url: "/categories",
-  },
-  {
-    name: "Activity", // 💡 Projects から Activity に名称変更
-    url: "/projects", // パス（URL）は現状のまま維持して名前だけ変えています
-  },
-  {
-    name: "About",
-    url: "/about",
   },
   {
     name: "Contact",
     url: "/contact",
   },
-  // 💡 Newsletter はここから削除しました
+  {
+    name: "About",
+    url: "/about",
+  },
 ];
 
 export const footer = [
   {
-    title: "Content",
+    title: "Content", // 💡 メインのナビゲーション
     links: [
       {
-        name: "Search",
-        url: "/search",
+        name: "Game",
+        url: "/Game",
       },
       {
-        name: "Blog",
-        url: "/blog",
-      },
-      {
-        name: "Categories", // 💡 フッター側にも Categories を追加
-        url: "/categories",
-      },
-      {
-        name: "Activity", // 💡 フッター側も Activity に変更
+        name: "Book",
         url: "/projects",
       },
       {
-        name: "About",
-        url: "/about",
+        name: "English",
+        url: "/english",
+      },
+     {
+        name: "Diary",
+        url: "/blog",
       },
     ],
   },
   {
-    title: "Resources",
+    title: "Legal", // 💡 Resourcesから「Legal」に変更し、お気に入りの位置を維持
     links: [
       {
         name: "Contact",
         url: "/contact",
       },
       {
-        name: "RSS",
-        url: "/rss.xml",
+        name: "Privacy Policy",
+        url: "/legal/privacy-policy", // テンプレート内のプライバシーポリシーのURL
       },
       {
-        name: "Sitemap",
-        url: "/sitemap-index.xml",
+        name: "Terms of Service", // 💡 新しくここに並びとして追加
+        url: "/legal/terms-of-service", // テンプレート内の利用規約のURL
       },
-      // 💡 フッターの Newsletter もここから削除しました
+    ],
+  },
+  {
+    title: "Links", // 💡 3列目（右側）に新設
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/aspratou",
+      },
+      {
+        name: "YouTube",
+        url: "https://youtube.com/", // 後ほど実際のURLに差し替え可能です
+      },
+      {
+        name: "Instagram",
+        url: "https://instagram.com/", // 💡 あなたのインスタのアカウントURLに書き換えてください
+      },
+      {
+        name: "Note",
+        url: "https://note.com/", // 💡 あなたのNoteのクリエイターURLに書き換えてください
+      },
     ],
   },
 ];

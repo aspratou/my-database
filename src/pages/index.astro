@@ -8,31 +8,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { attachMeta } from "../utils/meta";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
-const allProjects = await getCollection("projects", ({ data }) => !data.draft);
+// 💡 フォルダ名（コレクション名）自体は content.config.ts で定義された "projects" を参照しつつ、変数名を activity に統一します
+const allActivities = await getCollection("projects", ({ data }) => !data.draft);
 
 const sortedPosts = allPosts.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const sortedProjects = allProjects.sort(
+const sortedActivities = allActivities.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const latestPosts = sortedPosts.slice(0, 3).map((post) => attachMeta(post));
-const latestProjects = sortedProjects
+const latestActivities = sortedActivities
     .slice(0, 2)
-    .map((project) => attachMeta(project));
+    .map((activity) => attachMeta(activity));
 
-const featured = [...allPosts, ...allProjects]
+const featured = [...allPosts, ...allActivities]
     .filter((item) => item.data.featured !== undefined)
     .sort((a, b) => (a.data.featured ?? 0) - (b.data.featured ?? 0));
 
 const hasContent =
-    featured.length > 0 || latestPosts.length > 0 || latestProjects.length > 0;
+    featured.length > 0 || latestPosts.length > 0 || latestActivities.length > 0;
 ---
 
 <BaseLayout
-    title="Daniel Adrian"
-    description="Billionaire, genius, playboy, philanthropist."
+    title="Rato"
+    description="社会システムの解説や言語のニュアンス、ゲームメカニクスまで、日々のアウトプットや探求をまとめる個人データベース。"
 >
     <Container class="space-y-24 py-12">
         {
@@ -51,12 +52,13 @@ const hasContent =
                         />
                     )}
 
-                    {latestProjects.length > 0 && (
+                    {/* 💡 見出し（title）とリンク先、ボタンのテキストを Activity 用に適切に修正しました */}
+                    {latestActivities.length > 0 && (
                         <ContentGrid
-                            title="Latest Projects"
+                            title="Latest Activities"
                             href="/projects"
-                            viewAllText="View all projects →"
-                            items={latestProjects}
+                            viewAllText="View all activities →"
+                            items={latestActivities}
                             class="grid grid-cols-1 gap-8 md:grid-cols-2"
                         />
                     )}

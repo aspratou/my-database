@@ -1,50 +1,40 @@
 ---
-title: Privacy Policy
-description: >-
-  Learn how Daniel Adrian's website collects, uses, and protects your personal
-  information.
-lastUpdated: 2025-08-01T03:24:00.000Z
-ogImage:
-  src: >-
-    https://res.cloudinary.com/dellp9a4z/image/upload/v1756758390/og-privacy-policy_eekzan.png
-  alt: >-
-    The graphic has a two-column layout on a light blue, gridded background. On
-    the left, it displays a profile picture of a man with the text "Daniel
-    Adrian's SPACE" below. The right side features the large heading "Privacy
-    Policy" and a brief description of what the policy covers, which is how the
-    website collects, uses, and protects personal information.
+title: プライバシーポリシー
+description: 当ブログのプライバシーポリシーです。個人情報の取り扱いや免責事項について記載しています。
+lastUpdated: 2026-06-07
 ---
-Your privacy is important. This policy explains what information is collected and how it is
-used when you interact with this site.
 
-## Contact Form
+当ブログ（以下、「当サイト」といいます。）は、個人情報の重要性を認識し、個人情報を保護することが社会的責務であると考え、個人情報に関する法令を遵守するとともに、当サイトで取扱う個人情報の取得、利用、管理を適正に行います。
 
-When you use the contact form, your name, email address, and message are sent directly to me so that I can respond. This information is not stored on the site after the message is delivered.
+## 1. 個人情報の利用目的
+ユーザーが当サイトにお問い合わせをされた際、名前（ハンドルネーム）やメールアドレス等の個人情報を入力いただく場合があります。
+これらの個人情報は、質問に対する回答や必要な情報を電子メールなどでご連絡する場合にのみ利用するものであり、個人情報をご提供いただく際の目的以外では利用いたしません。
 
-## Emails
+## 2. 個人情報の第三者への開示・提供の禁止
+当サイトでは、ユーザーよりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示いたしません。
+- ご本人の同意がある場合
+- 法令に基づき開示することが必要である場合
 
-Transactional emails, such as confirmations or replies, are sent using Resend. Your email address is processed only to deliver these messages. I may also reply from my personal email account, but your information is not shared with any other party.
+## 3. 広告の配信について
+当サイトでは、第三者配信の広告サービス（Googleアドセンス、Amazonアソシエイト、A8.net等）を利用する場合があります。
+このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報「Cookie」（氏名、住所、メールアドレス、電話番号は含まれません）を使用することがあります。
+Cookieを無効にする設定およびGoogleアドセンスに関する詳細は、「[Google広告設定](https://adssettings.google.com/authenticated)」をご覧ください。
 
-## Newsletter
+## 4. アクセス解析ツールについて
+当サイトでは、サイトの分析と改善のためにGoogleが提供するアクセス解析ツール「Googleアナリティクス」を利用する場合があります。
+このGoogleアナリティクスは、トラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。
+この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
 
-If you subscribe to the newsletter, your email address is collected by ConvertKit. It is
-used only to send you updates and is handled according to their privacy policy. You can
-unsubscribe at any time.
+## 5. 免責事項
+当サイトに掲載されている情報・コンテンツについては、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。
 
-## Real User Measurements
+また、当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。
 
-Anonymous performance data is gathered through Real User Measurements to help improve the site. This information does not personally identify you and is used only for analytics.
+## 6. 著作権・肖像権について
+当サイトに掲載されているすべてのコンテンツ（文章、画像、動画、デザイン等）の著作権・肖像権等は、当サイト運営者または各権利所有者に帰属します。法的に認められている「引用」の範囲を超えて、無断で転載、複製、販売等の二次利用をすることを固く禁じます。
 
-## Cookies
+## 7. プライバシーポリシーの変更について
+当サイトは、個人情報に関して適用される日本の法令を遵守するとともに、本ポリシーの内容を適宜見直しその改善に努めます。修正された最新のプライバシーポリシーは常に本ページにて開示されます。
 
-A single short-lived cookie may be set to remember preferences or provide essential
-functionality. It expires quickly and is not used for tracking or advertising.
-
-## Changes to This Policy
-
-This policy may be updated from time to time. Continued use of the site after changes are
-posted constitutes acceptance of the revised policy.
-
-## Contact
-
-If you have questions about this Privacy Policy, please [contact me](/contact)
+---
+2026年6月7日 策定
