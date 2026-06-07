@@ -28,8 +28,12 @@ export const header = [
     url: "/blog",
   },
   {
-    name: "Projects",
-    url: "/projects",
+    name: "Categories", // 💡 Categories を新しく追加
+    url: "/categories",
+  },
+  {
+    name: "Activity", // 💡 Projects から Activity に名称変更
+    url: "/projects", // パス（URL）は現状のまま維持して名前だけ変えています
   },
   {
     name: "About",
@@ -39,10 +43,7 @@ export const header = [
     name: "Contact",
     url: "/contact",
   },
-  {
-    name: "Newsletter",
-    url: "/newsletter",
-  },
+  // 💡 Newsletter はここから削除しました
 ];
 
 export const footer = [
@@ -58,7 +59,11 @@ export const footer = [
         url: "/blog",
       },
       {
-        name: "Projects",
+        name: "Categories", // 💡 フッター側にも Categories を追加
+        url: "/categories",
+      },
+      {
+        name: "Activity", // 💡 フッター側も Activity に変更
         url: "/projects",
       },
       {
@@ -75,10 +80,6 @@ export const footer = [
         url: "/contact",
       },
       {
-        name: "Newsletter",
-        url: "/newsletter",
-      },
-      {
         name: "RSS",
         url: "/rss.xml",
       },
@@ -86,6 +87,7 @@ export const footer = [
         name: "Sitemap",
         url: "/sitemap-index.xml",
       },
+      // 💡 フッターの Newsletter もここから削除しました
     ],
   },
 ];
