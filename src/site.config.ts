@@ -2,7 +2,7 @@ export const SITE_SETTINGS = {
   title: "Rato", // ブログのタイトル
   description: "日々のアウトプットや探求をまとめる個人データベース", // 検索結果に表示される説明文（SEOで超重要）
   owner: "Rato", // サイトの所有者名
-  googleAnalyticsId: "G-C1Q97MG96G", // ⬅️ コピーしたGA4の「測定ID」を貼り付け
+  googleAnalyticsId: "G-ZJF7V1KPCE", // ⬅️ コピーしたGA4の「測定ID」を貼り付け
   googleSiteVerification: "nxCYP2ieh7lmr3cZhQDHm03_bH9Or3al_Zk6Z3G5Ing", // ⬅️ コピーした確認用文字列を貼り付け
   ogImages:
     "https://res.cloudinary.com/dellp9a4z/image/upload/v1756758385/og-home_ejuqq8.png", // ※後日、自分の画像URLに変更できます

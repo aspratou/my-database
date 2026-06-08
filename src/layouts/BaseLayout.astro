@@ -94,6 +94,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <script src="../utils/overlay.ts"></script>
 
         <meta name="google-site-verification" content="nxCYP2ieh7lmr3cZhQDHm03_bH9Or3al_Zk6Z3G5Ing" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZJF7V1KPCE');
+        </script>
 
     </head>
 
