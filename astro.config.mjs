@@ -86,7 +86,7 @@ export default defineConfig({
         "manifest-src 'none'",
       ],
       scriptDirective: {
-        resources: ["'self'", "https://challenges.cloudflare.com", "blob:", "https://www.googletagmanager.com"],
+        resources: ["'self'", "https://challenges.cloudflare.com", "blob:", "https://www.googletagmanager.com", "https://cdnjs.cloudflare.com"],
         hashes: [
           "sha256-+D181lN2Iw1b9lkNhIL2BSfLXvTnxTpdqxKE5OjSgk0=",
           "sha256-UnpvhDyF7OXferJXLLEvpK6eSVKujiCxuakCMAAfX0k=",

@@ -105,15 +105,11 @@ export const footer = [
       },
       {
         name: "YouTube",
-        url: "https://youtube.com/", // 後ほど実際のURLに差し替え可能です
+        url: "https://www.youtube.com/@genshin_english", // 後ほど実際のURLに差し替え可能です
       },
       {
         name: "Instagram",
-        url: "https://instagram.com/", // 💡 あなたのインスタのアカウントURLに書き換えてください
-      },
-      {
-        name: "Note",
-        url: "https://note.com/", // 💡 あなたのNoteのクリエイターURLに書き換えてください
+        url: "https://www.instagram.com/rato.dance/", // 💡 あなたのインスタのアカウントURLに書き換えてください
       },
     ],
   },
