@@ -10,7 +10,6 @@ image:
 license: "all-rights-reserved"
 draft: false
 ---
-
 <div id="secure-box" style="padding: 2rem; border: 2px solid #ef4444; border-radius: 8px; text-align: center; margin: 2rem 0; background: #fafafa; color: #333;">
   <p style="margin-bottom: 1rem; font-weight: bold; color: #ef4444;">🔒 セキュリティ保護コンテンツ</p>
   <p style="font-size: 0.9rem; margin-bottom: 1rem;">閲覧するには正しいパスワードを入力してください。</p>
@@ -22,27 +21,34 @@ draft: false
 <div id="secure-output" style="margin: 2rem 0; display: none;"></div>
 
 <script is:inline>
-  // 💡 トラッキングIDを完全に排除し、純粋なプレイリストID（34文字）だけに整理しました
-  const PLAYLIST_ID = "PLJ_bBHlRkQq4iUw1MOEeNnETifYjox-yF";
+  // ドキュメントが完全に読み込まれてから安全に実行する
+  document.addEventListener("DOMContentLoaded", () => {
+    const PLAYLIST_ID = "PLJ_bBHlRkQq4iUw1MOEeNnETifYjox-yF";
 
-  const btn = document.getElementById("secure-button");
-  const input = document.getElementById("secure-input");
-  const error = document.getElementById("secure-error");
-  const box = document.getElementById("secure-box");
-  const output = document.getElementById("secure-output");
+    const btn = document.getElementById("secure-button");
+    const input = document.getElementById("secure-input");
+    const error = document.getElementById("secure-error");
+    const box = document.getElementById("secure-box");
+    const output = document.getElementById("secure-output");
 
-  btn.addEventListener("click", () => {
-    const password = input.value.trim();
-    error.style.display = "none";
+    // 本番ビルドのバグ対策：最初からエラーが見えてしまうのをJavaScript側で強制非表示にする
+    if (error) error.style.display = "none";
 
-    if (password === "asperfamily") {
-      box.style.display = "none";
-      output.style.display = "block";
-      
-      // 🎯 YouTubeが公式に推奨する、一番確実なプレイリスト埋め込みURLの形です
-      output.innerHTML = `<iframe src="https://www.youtube.com/embed/videoseries?list=${PLAYLIST_ID}" title="YouTube" frameborder="0" allowfullscreen style="width:100%; height:500px; aspect-ratio: 16/9;"></iframe>`;
-    } else {
-      error.style.display = "block";
+    if (btn && input) {
+      btn.addEventListener("click", () => {
+        const password = input.value.trim();
+        if (error) error.style.display = "none";
+
+        if (password === "asperfamily") {
+          if (box) box.style.display = "none";
+          if (output) {
+            output.style.display = "block";
+            output.innerHTML = `<iframe src="https://www.youtube.com/embed/videoseries?list=${PLAYLIST_ID}" title="YouTube" frameborder="0" allowfullscreen style="width:100%; height:500px; aspect-ratio: 16/9;"></iframe>`;
+          }
+        } else {
+          if (error) error.style.display = "block";
+        }
+      });
     }
   });
 </script>
