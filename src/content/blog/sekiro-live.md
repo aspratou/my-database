@@ -10,25 +10,68 @@ image:
 license: "all-rights-reserved"
 draft: false
 ---
+<style type="text/css">
+  .secure-container {
+    padding: 2rem !important;
+    border: 2px solid #ef4444 !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    margin: 2rem 0 !important;
+    background-color: #fafafa !important;
+    color: #333333 !important;
+    display: block !important;
+  }
+  .secure-container p {
+    color: #333333 !important;
+  }
+  .secure-title {
+    margin-bottom: 1rem !important;
+    font-weight: bold !important;
+    color: #ef4444 !important;
+  }
+  .secure-field {
+    padding: 0.5rem !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 4px !important;
+    margin-right: 0.5rem !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+  }
+  .secure-btn {
+    padding: 0.5rem 1rem !important;
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+  }
+  #secure-error {
+    color: #ef4444 !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.9rem !important;
+    display: none !important; /* 💡 初期状態では絶対に非表示 */
+  }
+  #secure-output {
+    margin: 2rem 0 !important;
+    display: none !important;
+  }
+</style>
 
-<div id="secure-box" style="padding: 2rem; border: 2px solid #ef4444; border-radius: 8px; text-align: center; margin: 2rem 0; background: #fafafa; color: #333;">
-  <p style="margin-bottom: 1rem; font-weight: bold; color: #ef4444;">🔒 セキュリティ保護コンテンツ</p>
+<div id="secure-box" class="secure-container">
+  <p class="secure-title">🔒 セキュリティ保護コンテンツ</p>
   <p style="font-size: 0.9rem; margin-bottom: 1rem;">閲覧するには正しいパスワードを入力してください。</p>
-  <input type="password" id="secure-input" placeholder="パスワードを入力" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-right: 0.5rem; color: #000;" />
-  <button id="secure-button" style="padding: 0.5rem 1rem; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">認証</button>
-  <p id="secure-error" style="color: red; margin-top: 0.5rem; display: none; font-size: 0.9rem;">❌ パスワードが間違っています。</p>
+  <input type="password" id="secure-input" class="secure-field" placeholder="パスワードを入力" />
+  <button id="secure-button" class="secure-btn">認証</button>
+  <div id="secure-error">❌ パスワードが間違っています。</div>
 </div>
 
-<div id="secure-output" style="margin: 2rem 0; display: none;"></div>
+<div id="secure-output"></div>
 
 <script is:inline>
   (function() {
-    // 💡 「asperfamily」というパスワードを、あらかじめシュレッダー（ハッシュ化）にかけた文字列です。
-    // ソースコードにはこの暗号しか残らないため、ここから元のパスワードを割り出すことは逆立ちしても不可能です。
     const EXPECTED_HASH = "8ba7b85526017a41922bc30fa8e622b7bf742ff849fc35ecdf02660b543ba7c1";
-    
-    // YouTubeのプレイリストID（これも本番のバグを防ぐためにパーツごとに安全に組み立てます）
-    const playlistId = "PLJ_bBHlRkQq4iUw1MOEeNnETifYjox" + "-yF";
+    const playlistId = "PLJ_bBHlRkQq4iUw1MOEeNnETifYjox-yF";
 
     const btn = document.getElementById("secure-button");
     const input = document.getElementById("secure-input");
@@ -38,7 +81,6 @@ draft: false
 
     if (!btn || !input) return;
 
-    // 💡 外部ライブラリを一切使わず、ブラウザ純正の機能だけで安全にハッシュ化する関数
     async function sha256(text) {
       const msgBuffer = new TextEncoder().encode(text);
       const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -48,18 +90,15 @@ draft: false
 
     btn.addEventListener("click", async function() {
       const password = input.value.trim();
-      if (error) error.style.display = "none";
+      if (error) error.style.setProperty("display", "none", "important");
 
-      // ユーザーが入力したパスワードを、その場で同じようにシュレッダーにかけてみる
       const inputHash = await sha256(password);
 
-      // シュレッダーにかけたゴミ同士が一致するかどうかで答え合わせ
       if (inputHash === EXPECTED_HASH) {
-        if (box) box.style.display = "none";
+        if (box) box.style.setProperty("display", "none", "important");
         if (output) {
-          output.style.display = "block";
+          output.style.setProperty("display", "block", "important");
           
-          // 本番環境のバグ（HTML誤認）を完全に回避するため、iframeをJavaScriptで1から組み立てて挿入
           const iframe = document.createElement("iframe");
           iframe.src = "https://www.youtube.com/embed/videoseries?list=" + playlistId;
           iframe.title = "YouTube";
@@ -73,7 +112,7 @@ draft: false
           output.appendChild(iframe);
         }
       } else {
-        if (error) error.style.display = "block";
+        if (error) error.style.setProperty("display", "block", "important");
       }
     });
   })();
