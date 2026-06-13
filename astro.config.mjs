@@ -97,6 +97,7 @@ export default defineConfig({
           "sha256-eIXWvAmxkr251LJZkjniEK5LcPF3NkapbJepohwYRIc=",
           "sha256-Q2BPg90ZMplYY+FSdApNErhpWafg2hcRRbndmvxuL/Q=",
           "sha256-YvmHN+RLoaKyj0Wvr1lawwJSU85HX9VU+XMIN2yJTdI=",
+          "sha256-jSFsJYwhDHypqJFbTussDBgVy5SfI7/I1Juw45A85DE=",
         ],
       },
       styleDirective: {
@@ -126,6 +127,8 @@ export default defineConfig({
           "sha256-T9sUEzjkQ3SOy0NCXhmKIAUloPgSGMCsqFmQgcrgWkE=",
           "sha256-Zys6qhZqZHbNK8WL50GZmgMNy/sw2Xrrhc/s1xYuUCM=",
           "sha256-9M0YDr4oQ0n19cfyobzOUWngYu0M4oxT3LteEP6F1hY=",
+          "sha256-T/boxxwE3LrX7kIWL+jT4SOd/RsmLYa7oZ5kvtvdsMY=",
+          "sha256-FlZCwvHprITuazSVwMNb1nyoqua4RodBSyORz/1y0Kg=",
         ],
       },
     },
