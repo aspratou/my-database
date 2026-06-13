@@ -3,14 +3,14 @@ import { getCollection } from "astro:content";
 import ListLayout from "../../layouts/ListLayout.astro";
 import { attachMeta } from "../../utils/meta";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft))
+const books = (await getCollection("book", ({ data }) => !data.draft))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .map((p) => attachMeta(p));
 ---
 
 <ListLayout
-    title="Diary"
-    description="A collection of my Diary."
-    ogImage="https://res.cloudinary.com/dellp9a4z/image/upload/v1756758389/og-blog_gnqmat.png"
-    entries={posts}
+    title="Book" 
+    description="A collection of my books."
+    ogImage="https://res.cloudinary.com/dellp9a4z/image/upload/v1756758388/og-projects_mj7lcc.png"
+    entries={books} 
 />

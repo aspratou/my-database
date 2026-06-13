@@ -3,15 +3,19 @@ import type { CollectionEntry } from "astro:content";
 export type SiteSettings = {};
 
 export type ContentEntry =
-  | CollectionEntry<"blog">
-  | CollectionEntry<"projects">;
+  | CollectionEntry<"diary">
+  | CollectionEntry<"book">
+  | CollectionEntry<"game">
+  | CollectionEntry<"english">;
 
 export type AllContentEntry =
-  | CollectionEntry<"blog">
-  | CollectionEntry<"projects">
+  | CollectionEntry<"diary">
+  | CollectionEntry<"book">
+  | CollectionEntry<"game">
+  | CollectionEntry<"english">
   | CollectionEntry<"legal">;
 
-export type ContentCollections = "blog" | "projects" | "legal";
+export type ContentCollections = "diary" | "book" | "game" | "english" | "legal";
 
 export interface PostMeta {
   plainText: string;

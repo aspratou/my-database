@@ -1,9 +1,9 @@
 export const SITE_SETTINGS = {
   title: "Rato", // ブログのタイトル
-  description: "日々のアウトプットや探求をまとめる個人データベース", // 検索結果に表示される説明文（SEOで超重要）
+  description: "日々のアウトプットや探求をまとめる個人データベース", // 検索結果に表示される説明文
   owner: "Rato", // サイトの所有者名
-  googleAnalyticsId: "G-ZJF7V1KPCE", // ⬅️ コピーしたGA4の「測定ID」を貼り付け
-  googleSiteVerification: "nxCYP2ieh7lmr3cZhQDHm03_bH9Or3al_Zk6Z3G5Ing", // ⬅️ コピーした確認用文字列を貼り付け
+  googleAnalyticsId: "G-ZJF7V1KPCE", 
+  googleSiteVerification: "nxCYP2ieh7lmr3cZhQDHm03_bH9Or3al_Zk6Z3G5Ing", 
   ogImages:
     "https://res.cloudinary.com/dellp9a4z/image/upload/v1756758385/og-home_ejuqq8.png", // ※後日、自分の画像URLに変更できます
   socials: [
@@ -33,11 +33,11 @@ export const SITE_SETTINGS = {
 export const header = [
   {
     name: "Game",
-    url: "/Game",
+    url: "/game",
   },
   {
     name: "Book",
-    url: "/projects",
+    url: "/book",
   },
   {
     name: "English",
@@ -45,7 +45,7 @@ export const header = [
   },
   {
     name: "Diary",
-    url: "/blog",
+    url: "/diary",
   },
   {
     name: "Contact",
@@ -67,7 +67,7 @@ export const footer = [
       },
       {
         name: "Book",
-        url: "/projects",
+        url: "/book",
       },
       {
         name: "English",
@@ -75,7 +75,7 @@ export const footer = [
       },
      {
         name: "Diary",
-        url: "/blog",
+        url: "/diary",
       },
     ],
   },

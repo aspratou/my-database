@@ -5,10 +5,12 @@ import type { APIContext } from "astro";
 import { SITE_SETTINGS } from "../site.config";
 
 export async function GET(context: APIContext) {
-  const blogPosts = await getCollection("blog", ({ data }) => !data.draft);
-  const projects = await getCollection("projects", ({ data }) => !data.draft);
+  const diaryPosts = await getCollection("diary", ({ data }) => !data.draft);
+  const books = await getCollection("book", ({ data }) => !data.draft);
+  const games = await getCollection("game", ({ data }) => !data.draft);
+  const english = await getCollection("english", ({ data }) => !data.draft);
 
-  const allEntries = [...blogPosts, ...projects].sort(
+  const allEntries = [...diaryPosts, ...books, ...games, ...english].sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 

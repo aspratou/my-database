@@ -7,28 +7,27 @@ import EmptyState from "../components/ui/EmptyState.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { attachMeta } from "../utils/meta";
 
-const allPosts = await getCollection("blog", ({ data }) => !data.draft);
-// 💡 フォルダ名（コレクション名）自体は content.config.ts で定義された "projects" を参照しつつ、変数名を activity に統一します
-const allActivities = await getCollection("projects", ({ data }) => !data.draft);
+const allDiaries = await getCollection("diary", ({ data }) => !data.draft);
+const allBooks = await getCollection("book", ({ data }) => !data.draft);
 
-const sortedPosts = allPosts.sort(
+const sortedPosts = allDiaries.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const sortedActivities = allActivities.sort(
+const sortedBooks = allBooks.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const latestPosts = sortedPosts.slice(0, 3).map((post) => attachMeta(post));
-const latestActivities = sortedActivities
+const latestBooks = sortedBooks
     .slice(0, 2)
-    .map((activity) => attachMeta(activity));
+    .map((book) => attachMeta(book));
 
-const featured = [...allPosts, ...allActivities]
+const featured = [...allDiaries, ...allBooks]
     .filter((item) => item.data.featured !== undefined)
     .sort((a, b) => (a.data.featured ?? 0) - (b.data.featured ?? 0));
 
 const hasContent =
-    featured.length > 0 || latestPosts.length > 0 || latestActivities.length > 0;
+    featured.length > 0 || latestPosts.length > 0 || latestBooks.length > 0;
 ---
 
 <BaseLayout
@@ -46,19 +45,19 @@ const hasContent =
                     {latestPosts.length > 0 && (
                         <ContentGrid
                             title="Latest Posts"
-                            href="/blog"
+                            href="/diary"
                             viewAllText="View all posts →"
                             items={latestPosts}
                         />
                     )}
 
-                    {/* 💡 見出し（title）とリンク先、ボタンのテキストを Activity 用に適切に修正しました */}
-                    {latestActivities.length > 0 && (
+                    {/* 💡 見出し（title）とリンク先、ボタンのテキストを Books 用に適切に修正しました */}
+                    {latestBooks.length > 0 && (
                         <ContentGrid
-                            title="Latest Activities"
-                            href="/projects"
-                            viewAllText="View all activities →"
-                            items={latestActivities}
+                            title="Latest Books"
+                            href="/books"
+                            viewAllText="View all books →"
+                            items={latestBooks}
                             class="grid grid-cols-1 gap-8 md:grid-cols-2"
                         />
                     )}

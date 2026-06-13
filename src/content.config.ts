@@ -27,7 +27,7 @@ const licenses = defineCollection({
     name: z.string().min(1, { message: "License Name cannot be empty." }),
     description: z.string().optional(),
     url: z.string().url(),
-    type: z.enum(["post", "project"]),
+    type: z.enum(["post", "project", "book", "game", "english"]),
   }),
 });
 
@@ -46,20 +46,17 @@ const baseSchema = z.object({
   ogImage: ogImageOptionalSchema,
 });
 
-const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+const diary = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/diary" }),
   schema: baseSchema,
 });
 
-const projects = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
-  schema: baseSchema.extend({
-    repoUrl: z.string().url().optional(),
-    demoUrl: z.string().url().optional(),
-    status: z
-      .enum(["completed", "in-progress", "planned"])
-      .default("completed"),
-  }),
+const projectSchema = baseSchema.extend({
+  repoUrl: z.string().url().optional(),
+  demoUrl: z.string().url().optional(),
+  status: z
+    .enum(["completed", "in-progress", "planned"])
+    .default("completed"),
 });
 
 const legal = defineCollection({
@@ -83,8 +80,19 @@ const about = defineCollection({
 
 export const collections = {
   licenses,
-  blog,
-  projects,
+  diary,
   legal,
   about,
+  book: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/book" }),
+    schema: projectSchema, // 💡 ここを projectSchema に変更
+  }),
+  game: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/game" }),
+    schema: projectSchema, // 💡 ここを projectSchema に変更
+  }),
+  english: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/english" }),
+    schema: projectSchema, // 💡 ここを projectSchema に変更
+  }),
 };

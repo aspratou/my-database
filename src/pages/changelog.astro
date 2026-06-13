@@ -1,0 +1,54 @@
+---
+import Container from "../components/layouts/Container.astro";
+import PageTitle from "../components/ui/PageTitle.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Prose from "../components/content/Prose.astro";
+---
+
+<BaseLayout
+    title="Changelog | History"
+    description="このサイトの構築・更新履歴"
+>
+    <Container class="mx-auto max-w-4xl py-12">
+        <PageTitle title="Change Log" />
+        <Prose class:list={"mt-16"}>
+
+            <h4>2026-06-13</h4>
+            <ul>
+                <li>SEKIRO ゲーム実況の動画をパスワード付きで上げたいがCSSがどうしても壊れる。いったん放置</li>                
+                <li>English とGame カテゴリを整備</li>
+                <li>Diary カテゴリ関連のコードがテンプレの名前のままだったので整備</li>
+                <li>バイブコーディングのお供をGemini からClaudに変更</li>
+                <li>Changelog ページを追加</li>
+            </ul>
+
+            <h4>2026-06-09</h4>
+            <ul>
+                <li>Diary ページのタイトルをアップデート</li>                
+                <li>SEKIRO ゲーム実況の記録をパスワード付きの記事でアップ</li>
+            </ul>
+
+            <h4>2026-06-08</h4>
+            <ul>
+                <li>Google Analytics との連携</li>                
+                <li>Google Search console との連携</li>
+            </ul>
+
+            <h4>2026-06-07</h4>
+            <ul>
+                <li>開発環境をVS Code に統一</li>                
+                <li>ローカル > 本番Push というプロセスを確立</li>
+                <li>ヘッダー、フッターに新たに項目を配置</li>
+                <li>各リンクから正しくコンテンツに遷移させる（まだ作っていないページはそのまま）</li>
+                <li>Note に書いていた日記をこちらに移行</li>
+            </ul>
+
+            <h4>2026-06-06</h4>
+            <ul>
+                <li>GitHub Pages の環境構築</li>                
+                <li>Astro の Basic Blog テンプレートを使用してWebsite を構築</li>
+                <li>サイトを公開</li>
+            </ul>
+        </Prose>
+    </Container>
+</BaseLayout>
