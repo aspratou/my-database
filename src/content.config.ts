@@ -84,15 +84,15 @@ export const collections = {
   legal,
   about,
   book: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/book" }),
-    schema: projectSchema, // 💡 ここを projectSchema に変更
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/book" }),
+    schema: projectSchema, 
   }),
   game: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/game" }),
-    schema: projectSchema, // 💡 ここを projectSchema に変更
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/game" }),
+    schema: projectSchema, 
   }),
   english: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/english" }),
-    schema: projectSchema, // 💡 ここを projectSchema に変更
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/english" }),
+    schema: projectSchema, 
   }),
 };

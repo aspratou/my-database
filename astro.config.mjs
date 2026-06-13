@@ -9,6 +9,8 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://aspratou.github.io',
@@ -47,15 +49,10 @@ export default defineConfig({
     },
   ],
 
-  integrations: [
-    sitemap(),
-    pagefind(),
-    icon(),
-    expressiveCode({
-      plugins: [pluginLineNumbers()],
-      themes: ["aurora-x"],
-    }),
-  ],
+  integrations: [sitemap(), pagefind(), icon(), expressiveCode({
+    plugins: [pluginLineNumbers()],
+    themes: ["aurora-x"],
+  }), mdx()],
 
   markdown: {
     rehypePlugins: [
@@ -128,6 +125,7 @@ export default defineConfig({
           "sha256-OHHJt3V7bbGQVFFoSS8ClWV1uXy19wbP3kJTdWrvtd4=",
           "sha256-T9sUEzjkQ3SOy0NCXhmKIAUloPgSGMCsqFmQgcrgWkE=",
           "sha256-Zys6qhZqZHbNK8WL50GZmgMNy/sw2Xrrhc/s1xYuUCM=",
+          "sha256-9M0YDr4oQ0n19cfyobzOUWngYu0M4oxT3LteEP6F1hY=",
         ],
       },
     },
@@ -136,4 +134,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-}); 
+});
