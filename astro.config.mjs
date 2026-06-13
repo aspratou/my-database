@@ -77,7 +77,7 @@ export default defineConfig({
         "img-src 'self' https://res.cloudinary.com/dellp9a4z/ data:",
         "media-src 'self' https://res.cloudinary.com/dellp9a4z/",
         "font-src 'self' data:",
-        "frame-src 'self' https://challenges.cloudflare.com",
+        "frame-src 'self' https://challenges.cloudflare.com https://www.youtube.com",
         "worker-src 'self' blob: https://challenges.cloudflare.com",
         "child-src 'self' https://challenges.cloudflare.com blob:",
         "manifest-src 'none'",
