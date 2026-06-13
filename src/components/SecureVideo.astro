@@ -1,10 +1,10 @@
 ---
 interface Props {
-  playlistId: string;
+  videoIds: string[];
   expectedHash: string;
 }
 
-const { playlistId, expectedHash } = Astro.props;
+const { videoIds, expectedHash } = Astro.props;
 ---
 
 <style type="text/css">
@@ -53,9 +53,20 @@ const { playlistId, expectedHash } = Astro.props;
     margin: 2rem 0 !important;
     display: none !important;
   }
+  .secure-video-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .secure-video-list iframe {
+    width: 100% !important;
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+    border-radius: 8px !important;
+  }
 </style>
 
-<div id="secure-box" class="secure-container" data-playlist-id={playlistId} data-expected-hash={expectedHash}>
+<div id="secure-box" class="secure-container" data-video-ids={JSON.stringify(videoIds)} data-expected-hash={expectedHash}>
   <p class="secure-title">🔒 セキュリティ保護コンテンツ</p>
   <p style="font-size: 0.9rem; margin-bottom: 1rem;">閲覧するには正しいパスワードを入力してください。</p>
   <input type="password" id="secure-input" class="secure-field" placeholder="パスワードを入力" />
@@ -71,7 +82,7 @@ const { playlistId, expectedHash } = Astro.props;
     if (!box) return;
 
     const EXPECTED_HASH = box.dataset.expectedHash;
-    const playlistId = box.dataset.playlistId;
+    const videoIds = JSON.parse(box.dataset.videoIds || "[]");
 
     const btn = document.getElementById("secure-button");
     const input = document.getElementById("secure-input");
@@ -97,18 +108,21 @@ const { playlistId, expectedHash } = Astro.props;
         if (box) box.style.setProperty("display", "none", "important");
         if (output) {
           output.style.setProperty("display", "block", "important");
-          
-          const iframe = document.createElement("iframe");
-          iframe.src = "https://www.youtube.com/embed?listType=playlist&list=" + playlistId;
-          iframe.title = "YouTube";
-          iframe.frameBorder = "0";
-          iframe.allowFullscreen = true;
-          iframe.style.width = "100%";
-          iframe.style.height = "500px";
-          iframe.style.aspectRatio = "16/9";
-          
+
+          const list = document.createElement("div");
+          list.className = "secure-video-list";
+
+          videoIds.forEach(function(videoId) {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://www.youtube.com/embed/" + videoId;
+            iframe.title = "YouTube";
+            iframe.frameBorder = "0";
+            iframe.allowFullscreen = true;
+            list.appendChild(iframe);
+          });
+
           output.innerHTML = "";
-          output.appendChild(iframe);
+          output.appendChild(list);
         }
       } else {
         if (error) error.style.setProperty("display", "block", "important");
