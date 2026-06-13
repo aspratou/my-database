@@ -98,6 +98,7 @@ export default defineConfig({
           "sha256-Q2BPg90ZMplYY+FSdApNErhpWafg2hcRRbndmvxuL/Q=",
           "sha256-YvmHN+RLoaKyj0Wvr1lawwJSU85HX9VU+XMIN2yJTdI=",
           "sha256-jSFsJYwhDHypqJFbTussDBgVy5SfI7/I1Juw45A85DE=",
+          "sha256-QRrI35crkGvfyHe4zDJ4r+s9AyoB6wP86lLVZJgBJJk=",
         ],
       },
       styleDirective: {
